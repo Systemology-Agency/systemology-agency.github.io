@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Account guard: push only as the account pinned in git config cia.ghaccount.
+acct=$(git config --get cia.ghaccount) || { echo "cia.ghaccount not set" >&2; exit 1; }
+exec ~/.local/bin/cia-git-ensure-account "$acct"

@@ -1,0 +1,18 @@
+{
+  "collection": "ms_assets_cebc9dfa",
+  "failed_files": [],
+  "indexed_chunks": 0,
+  "indexed_files": 1,
+  "last_completed_at": "2026-10-13T00:33:17.557270Z",
+  "last_started_at": "2026-10-13T00:33:15.034291Z",
+  "last_success_at": "2026-10-13T00:33:17.557270Z",
+  "milvus_uri": "~/.memsearch/milvus.db",
+  "operation": "index",
+  "paths": [
+    "/Users/leo/Documents/Claude/Projects/My CIA/Business-CIA/Business CIA/projects/systemology-website/site/assets/.memsearch/memory"
+  ],
+  "schema_version": 1,
+  "status": "ok",
+  "total_files": 1,
+  "updated_at": "2026-10-13T00:33:17.557270Z"
+}
