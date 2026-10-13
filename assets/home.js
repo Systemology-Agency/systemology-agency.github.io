@@ -40,6 +40,7 @@
 
   // system map: walk a lead through the five stages, then loop
   var flow = document.getElementById("flow");
+  if (flow) {
   var nodes = flow.querySelectorAll(".node");
   var msg = document.getElementById("logmsg");
   var lines = [
@@ -67,10 +68,12 @@
       });
     }, { threshold: 0.3 }).observe(flow);
   } else { tick(); timer = setInterval(tick, 2400); }
+  }
 
   // offer tabs with sliding underline and arrow-key support
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
   var ink = document.getElementById("ink");
+  if (tabs.length && ink) {
   function moveInk(t) { ink.style.left = t.offsetLeft + "px"; ink.style.width = t.offsetWidth + "px"; }
   function select(t, focus) {
     tabs.forEach(function (o) {
@@ -94,6 +97,7 @@
   window.addEventListener("resize", inkToCurrent);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(inkToCurrent);
   inkToCurrent();
+  }
 
   // nurture tiles: glow follows the pointer
   document.querySelectorAll(".tile").forEach(function (el) {
