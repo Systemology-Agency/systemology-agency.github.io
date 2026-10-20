@@ -26,6 +26,10 @@
 
     <form id="wl" class="wl seq d4" novalidate>
       <div id="wl-fields" class="fields">
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+          <label for="wl-site">Leave this field empty</label>
+          <input id="wl-site" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <label class="sr" for="wl-name">First name</label>
         <input id="wl-name" name="first_name" type="text" autocomplete="given-name" placeholder="First name" required>
         <label class="sr" for="wl-email">Email</label>
@@ -44,6 +48,6 @@
 <footer>
   <div class="wrap"><div class="legal">&copy; 2026 Systemology Agency</div></div>
 </footer>
-<script src="/assets/soon.js?v=3"></script>
+<script src="/assets/soon.js?v=4"></script>
 </body>
 </html>

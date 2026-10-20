@@ -11,12 +11,19 @@
   var submit = document.getElementById("wl-submit");
   var fields = document.getElementById("wl-fields");
   var done = document.getElementById("wl-done");
+  var LOADED = Date.now();
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var n = name.value.trim(), v = email.value.trim();
     if (!n) { err.textContent = "Enter your first name."; name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { err.textContent = "Enter a valid email."; email.focus(); return; }
+    // Bot traps: honeypot filled or submitted under 3s after load. Fake success, no Kit call.
+    if (document.getElementById("wl-site").value || Date.now() - LOADED < 3000) {
+      fields.hidden = true;
+      done.hidden = false;
+      return;
+    }
     submit.disabled = true;
     err.textContent = "";
     fetch("https://api.convertkit.com/v3/tags/" + TAG + "/subscribe", {
