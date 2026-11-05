@@ -65,12 +65,17 @@
     } else if (y <= sysPin1) {
       pos = ctr(anchor); scale = 1.25;
     } else if (y < sysPin1 + vh * 0.8) {
-      pos = mix(ctr(anchor), dock(), ease((y - sysPin1) / (vh * 0.8))); scale = lerp(1.25, 1, ease((y - sysPin1) / (vh * 0.8)));
+      var t2 = ease((y - sysPin1) / (vh * 0.8));
+      pos = mix(ctr(anchor), dock(), t2); scale = lerp(1.25, 1, t2);
+      // mobile QA: no side rail on phones, so the dock sat over body copy. Fade out instead.
+      if (!navOn) op = 1 - t2;
     } else if (y < clsT - vh) {
       pos = dock();
+      if (!navOn) op = 0;
     } else {
       var t3 = ease((y - (clsT - vh)) / vh);
       pos = mix(dock(), ctr(goal), t3);
+      if (!navOn) op = t3;
       landed = t3 >= 0.995;
       scale = lerp(1, 1.1, t3);
     }
