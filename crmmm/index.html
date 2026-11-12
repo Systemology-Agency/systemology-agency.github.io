@@ -3,288 +3,1171 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lofty CRM Money Machine | Systemology Agency</title>
-<meta name="description" content="CRMs don't suck, your system does. We build your Lofty CRM into a done-for-you money machine: data, follow-up, website and automations set up so you can sell on day one.">
-<meta property="og:title" content="Lofty CRM Money Machine">
-<meta property="og:description" content="CRMs don't suck, your system does. We build your Lofty CRM so it follows up for you.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#09090f">
+<title>CRM Money Machine | Systemology</title>
+<meta name="description" content="A done-for-you Lofty CRM build for real estate agents and teams. You do 3 things. We build the rest.">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/home.css">
-<link rel="stylesheet" href="/assets/crm.css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#255c8e; --teal-dark:#1b4670; --blue:#4d7491; --crimson:#ad3457; --crimson-dark:#912a48;
+  --olive:#313624; --gold:#cbbc79; --gold-soft:#f6f2e3;
+  --ink:#1d2330; --body:#3d4452; --muted:#6b7280; --line:#e6e9ef;
+  --bg:#ffffff; --soft:#f5f8fc; --teal-soft:#e9f0f7;
+  --radius:18px; --maxw:1180px;
+  --shadow:0 10px 30px rgba(29,35,48,.08); --shadow-lg:0 24px 60px rgba(37,92,142,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px;scroll-behavior:smooth}
+body{font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+h1,h2,h3,h4{color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px}
+.center{text-align:center}
+.lead{font-size:1.15rem;color:var(--body);max-width:720px}
+.center .lead{margin:0 auto}
+h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--crimson);color:#fff;box-shadow:0 8px 22px rgba(173,52,87,.28)}
+.btn-primary:hover{background:var(--crimson-dark);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--teal);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn svg{width:18px;height:18px}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav img{height:34px;width:auto}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.92rem}
+.nav-links a:hover{color:var(--teal)}
+.nav .btn{padding:11px 22px;font-size:.92rem}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 0;background:radial-gradient(900px 480px at 15% 0%,#e3edf7 0%,transparent 60%),radial-gradient(800px 460px at 90% 10%,#f6e6ec 0%,transparent 55%),#fff}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);max-width:900px;margin:0 auto 22px}
+.hero h1 span{color:var(--teal)}
+.hero .lead{font-size:1.25rem;margin-bottom:34px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:.88rem;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 16px 6px 8px;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:26px;box-shadow:var(--shadow)}
+.pill b{background:var(--teal);color:#fff;border-radius:999px;padding:2px 10px;font-size:.72rem;letter-spacing:.05em}
+
+/* product mock */
+.mock{max-width:1040px;margin:64px auto 0;background:#fff;border:1px solid var(--line);border-bottom:none;border-radius:22px 22px 0 0;box-shadow:var(--shadow-lg);overflow:hidden}
+.mock-top{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);background:#fafbfd}
+.mock-top i{width:11px;height:11px;border-radius:50%;background:#e2e6ec;display:block}
+.mock-top span{margin-left:14px;font-size:.75rem;color:var(--muted);font-weight:600}
+.mock-body{display:grid;grid-template-columns:200px 1fr;min-height:330px}
+.mock-side{border-right:1px solid var(--line);padding:18px 14px;background:#fbfcfe}
+.mock-side div{font-size:.78rem;font-weight:600;color:var(--muted);padding:8px 12px;border-radius:10px;margin-bottom:4px}
+.mock-side div.on{background:var(--teal-soft);color:var(--teal)}
+.mock-main{padding:20px}
+.mock-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.mock-stat{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.mock-stat small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.22);color:var(--crimson)}100%{transform:scale(1)}}
+.mock-stat strong.bump{animation:bump .6s ease-out}
+.mock-stat strong{display:inline-block;font-variant-numeric:tabular-nums;font-size:1.25rem;color:var(--ink)}
+.mock-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mock-col h5{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.lead-card{border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-bottom:8px;font-size:.72rem;line-height:1.4;background:#fff}
+.lead-card b{display:block;color:var(--ink);font-size:.76rem}
+.tag{display:inline-block;margin-top:5px;font-size:.62rem;font-weight:700;padding:1px 8px;border-radius:999px}
+.t1{background:var(--teal-soft);color:var(--teal)}.t2{background:#f8e6ec;color:var(--crimson)}.t3{background:var(--gold-soft);color:#8a7a33}
+
+/* proof strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:38px 24px}
+.strip strong{display:block;font-size:2.1rem;color:var(--teal);font-weight:800;line-height:1.1}
+.strip strong{font-variant-numeric:tabular-nums}
+.strip span{font-size:.88rem;color:var(--muted);font-weight:600}
+
+/* audience cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.aud{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease}
+.aud:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.aud .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal);margin-bottom:20px}
+.aud .ico svg{width:26px;height:26px}
+.aud h3{font-size:1.3rem;margin-bottom:10px}
+
+/* old vs new */
+.bg-soft{background:var(--soft)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.cbox{border-radius:var(--radius);padding:38px 34px}
+.cbox h3{font-size:1.35rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.cbox ul{list-style:none}
+.cbox li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.cbox li:last-child{border-bottom:none}
+.cbox li svg{flex:0 0 22px;width:22px;height:22px;margin-top:3px}
+.old{background:#fff;border:1px solid var(--line)}
+.old h3{color:var(--muted)}
+.old li svg{color:#c2c8d2}
+.new{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-dark) 100%);color:#e6eef7}
+.new h3{color:#fff}
+.new li{border-bottom-color:rgba(255,255,255,.14)}
+.new li svg{color:var(--gold)}
+.frame{margin-top:36px;text-align:center;color:var(--body);font-size:1.05rem}
+.frame b{color:var(--ink)}
+
+/* pillars: four cards feeding one sales machine */
+.machine{max-width:1000px;margin:56px auto 0;text-align:left}
+.stage{position:relative;aspect-ratio:984/700}
+.stage svg.legs{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+.slot{position:absolute;padding:6px;z-index:1}
+.s-web{left:3.66%;top:7.14%;width:46.24%;height:28.57%}
+.s-auto{left:49.9%;top:0;width:46.34%;height:28.57%}
+.s-set{left:0;top:36%;width:46.34%;height:24.86%}
+.s-org{left:53.56%;top:28.86%;width:46.44%;height:28.57%}
+.mcard{--c:var(--teal);height:100%;display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);
+  border-radius:16px;padding:20px 24px;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1)}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.mcard.l{flex-direction:row-reverse;text-align:right}
+.mcard .ico{flex:0 0 52px;width:52px;height:52px;border-radius:14px;background:var(--c);color:#fff;display:grid;place-items:center;
+  box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 14%,transparent)}
+.mcard .ico svg{width:28px;height:28px}
+.mcard small{display:block;font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--c);line-height:1.4}
+.mcard h3{font-size:1.3rem;margin:2px 0 6px}
+.mcard p{font-size:.88rem;line-height:1.5;color:var(--body);font-weight:500}
+.c-set{--c:var(--teal)}.c-org{--c:var(--blue)}.c-web{--c:var(--crimson)}.c-auto{--c:var(--olive)}
+.legs .flow{stroke:#fff;stroke-opacity:.6;stroke-width:3;stroke-dasharray:6 12;stroke-linecap:round;animation:flow 1.1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-18}}
+.tip-dot{animation:pulse-slow 1.6s ease-in-out infinite}
+.machine-label{text-align:center;margin-top:-4px}
+.machine-label strong{display:block;font-size:1.35rem;color:var(--ink);font-weight:800}
+.machine-label span{font-size:.92rem;color:var(--muted)}
+.mfunnel{display:none}
+/* build-up: cards in, legs pour down, funnel fills */
+.js .machine.reveal{opacity:1;transform:none}
+.js .machine .slot{transition:opacity .6s ease,transform .6s cubic-bezier(.4,0,.2,1)}
+.js .machine.reveal .slot{opacity:0;transform:translateY(18px)}
+.js .machine.in .slot{opacity:1;transform:none}
+.js .machine.in .s-set{transition-delay:.05s}.js .machine.in .s-web{transition-delay:.2s}
+.js .machine.in .s-auto{transition-delay:.35s}.js .machine.in .s-org{transition-delay:.5s}
+.legs .leg{transform-box:fill-box;transform-origin:top;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.js .machine.reveal .leg{transform:scaleY(0)}
+.js .machine.in .leg{transform:none}
+.js .machine.in .leg:nth-of-type(1){transition-delay:.75s}.js .machine.in .leg:nth-of-type(2){transition-delay:.85s}
+.js .machine.in .leg:nth-of-type(3){transition-delay:.95s}.js .machine.in .leg:nth-of-type(4){transition-delay:1.05s}
+.legs .funnel,.machine-label{transition:opacity .7s ease,transform .7s cubic-bezier(.4,0,.2,1)}
+.legs .funnel{transform-box:fill-box;transform-origin:top center}
+.js .machine.reveal .funnel{opacity:0;transform:scaleY(.6)}
+.js .machine.reveal .machine-label{opacity:0;transform:translateY(10px)}
+.js .machine.in .funnel{opacity:1;transform:none;transition-delay:1.45s}
+.js .machine.in .machine-label{opacity:1;transform:none;transition-delay:1.8s}
+@media (max-width:900px){
+  .stage{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+  .stage svg.legs{display:none}
+  .slot{position:static;width:auto;height:auto}
+  .s-set{order:1}.s-org{order:2}.s-web{order:3}.s-auto{order:4}
+  .mcard.l{flex-direction:row;text-align:left}
+  .mfunnel{display:block;width:150px;margin:18px auto 6px}
+  .machine-label{margin-top:0}
+}
+@media (max-width:600px){
+  .stage{grid-template-columns:1fr}
+  .mcard{padding:18px 20px}
+}
+
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;counter-reset:s}
+.step{background:#fff;border-radius:var(--radius);padding:34px 30px;border:1px solid var(--line);position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:-18px;left:30px;width:40px;height:40px;border-radius:50%;background:var(--crimson);color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:0 6px 16px rgba(173,52,87,.3)}
+.step h3{font-size:1.25rem;margin:10px 0 8px}
+.phases{margin-top:64px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px}
+.phases h3{font-size:1.35rem;margin-bottom:6px}
+.phase-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}
+.phase{border-top:4px solid var(--teal-soft);padding-top:14px}
+.phase.done{border-top-color:var(--teal)}
+.phase small{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--crimson);text-transform:uppercase}
+.phase b{display:block;color:var(--ink);font-size:.98rem;line-height:1.3;margin:4px 0}
+.phase p{font-size:.84rem;line-height:1.5;color:var(--muted)}
+
+/* build timeline: alternating steps on one axis */
+.timeline{margin-top:64px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:44px 32px 36px;text-align:center}
+.timeline>h3{font-size:1.5rem;margin-bottom:4px}
+.timeline>p{color:var(--muted);margin-bottom:8px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto 28px auto}
+.tl-axis{position:absolute;left:0;right:8px;top:var(--axis-y,50%);height:2px;background:#d6dde7;transform-origin:left;margin-top:-1px}
+.tl-axis:after{content:"";position:absolute;right:-9px;top:-6px;border-left:11px solid #d6dde7;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.tl-prog{position:absolute;left:0;top:var(--axis-y,50%);height:4px;margin-top:-2px;width:0;border-radius:4px;
+  background:linear-gradient(90deg,var(--teal),var(--crimson));transition:width .9s cubic-bezier(.4,0,.2,1)}
+.tl-prog:after{content:"";position:absolute;right:-7px;top:-5px;width:14px;height:14px;border-radius:50%;background:var(--crimson);box-shadow:0 0 0 6px rgba(173,52,87,.18),0 0 18px rgba(173,52,87,.5)}
+.tl-prog.reset{transition:none}
+.ts{--c:var(--teal);display:contents}
+.ts:nth-child(4){--c:var(--blue)}.ts:nth-child(5){--c:var(--crimson)}.ts:nth-child(6){--c:var(--olive)}.ts:nth-child(7){--c:var(--teal)}.ts:nth-child(8){--c:var(--crimson)}
+.ts-top,.ts-bot{display:flex;flex-direction:column;align-items:center;padding:0 8px}
+.ts-top{grid-row:1;justify-content:flex-end}
+.ts-bot{grid-row:3;justify-content:flex-start}
+.ts-dot{grid-row:2;align-self:center;justify-self:center;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--c);position:relative;z-index:2;transition:background .4s,transform .4s}
+.ts-stem{width:2px;height:26px;background:var(--c);opacity:.55}
+.ts-circ{width:96px;height:96px;border-radius:50%;border:2px solid var(--c);background:#fff;color:var(--c);display:grid;place-items:center;position:relative;
+  transition:background .45s,color .45s,transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s}
+.ts-circ svg{width:42px;height:42px}
+.ts-txt{min-height:112px;padding:14px 0}
+.ts-top .ts-txt{display:flex;flex-direction:column;justify-content:flex-end}
+.ts-txt small{display:block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.ts-txt b{display:block;color:var(--ink);font-size:1.08rem;line-height:1.3;margin:2px 0 4px}
+.ts-txt span{display:block;font-size:.88rem;line-height:1.45;color:var(--muted)}
+/* active step */
+.ts.on .ts-circ{background:var(--c);color:#fff;transform:scale(1.08);box-shadow:0 12px 28px color-mix(in srgb,var(--c) 35%,transparent)}
+.ts.on .ts-circ:after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--c);animation:ring 1.6s ease-out infinite}
+.ts.on .ts-dot{background:var(--c);transform:scale(1.25)}
+.ts.on .ts-txt b{color:var(--c)}
+/* build-in sequence */
+.js .timeline.reveal{opacity:1;transform:none}
+.js .timeline .tl-axis{transition:transform 2.4s linear}
+.js .timeline.reveal .tl-axis{transform:scaleX(0)}
+.js .timeline.in .tl-axis{transform:none}
+.js .timeline .ts-dot,.js .timeline .ts-stem,.js .timeline .ts-circ,.js .timeline .ts-txt{transition-property:opacity,transform,background,color,box-shadow;transition-duration:.5s}
+.js .timeline.reveal .ts-dot{opacity:0;transform:scale(0)}
+.js .timeline.reveal .ts-stem{opacity:0;transform:scaleY(0)}
+.js .timeline.reveal .ts-circ{opacity:0;transform:scale(.6)}
+.js .timeline.reveal .ts-txt{opacity:0;transform:translateY(10px)}
+.js .timeline.in .ts-dot{opacity:1;transform:none}
+.js .timeline.in .ts-stem{opacity:.55;transform:none}
+.js .timeline.in .ts-circ{opacity:1;transform:none}
+.js .timeline.in .ts-txt{opacity:1;transform:none}
+.js .timeline.in .ts.on .ts-circ{transform:scale(1.08)}
+.js .timeline.in .ts.on .ts-dot{transform:scale(1.25)}
+@media (max-width:900px){
+  .timeline{padding:32px 20px}
+  .tl{display:block;padding-left:0;margin-top:24px}
+  .tl-axis,.tl-prog{display:none}
+  .ts{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:center;text-align:left;position:relative;padding:10px 0}
+  .ts:not(:last-child):before{content:"";position:absolute;left:35px;top:66px;bottom:-14px;width:2px;background:#d6dde7}
+  .ts-top,.ts-bot{display:contents}
+  .ts-dot,.ts-stem{display:none}
+  .ts-circ{width:72px;height:72px;grid-column:1;grid-row:1}
+  .ts-circ svg{width:32px;height:32px}
+  .ts-txt{grid-column:2;grid-row:1;min-height:0;padding:0}
+  .ts-top .ts-txt{justify-content:flex-start}
+}
+.ts:nth-child(3)>*{grid-column:1}
+.ts:nth-child(4)>*{grid-column:2}
+.ts:nth-child(5)>*{grid-column:3}
+.ts:nth-child(6)>*{grid-column:4}
+.ts:nth-child(7)>*{grid-column:5}
+.ts:nth-child(8)>*{grid-column:6}
+
+.js .timeline.in:not(.built) .ts:nth-child(3) .ts-dot{transition-delay:0.20s}.js .timeline.in:not(.built) .ts:nth-child(3) .ts-stem{transition-delay:0.32s}.js .timeline.in:not(.built) .ts:nth-child(3) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(3) .ts-txt{transition-delay:0.42s}
+.js .timeline.in:not(.built) .ts:nth-child(4) .ts-dot{transition-delay:0.56s}.js .timeline.in:not(.built) .ts:nth-child(4) .ts-stem{transition-delay:0.68s}.js .timeline.in:not(.built) .ts:nth-child(4) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(4) .ts-txt{transition-delay:0.78s}
+.js .timeline.in:not(.built) .ts:nth-child(5) .ts-dot{transition-delay:0.92s}.js .timeline.in:not(.built) .ts:nth-child(5) .ts-stem{transition-delay:1.04s}.js .timeline.in:not(.built) .ts:nth-child(5) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(5) .ts-txt{transition-delay:1.14s}
+.js .timeline.in:not(.built) .ts:nth-child(6) .ts-dot{transition-delay:1.28s}.js .timeline.in:not(.built) .ts:nth-child(6) .ts-stem{transition-delay:1.40s}.js .timeline.in:not(.built) .ts:nth-child(6) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(6) .ts-txt{transition-delay:1.50s}
+.js .timeline.in:not(.built) .ts:nth-child(7) .ts-dot{transition-delay:1.64s}.js .timeline.in:not(.built) .ts:nth-child(7) .ts-stem{transition-delay:1.76s}.js .timeline.in:not(.built) .ts:nth-child(7) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(7) .ts-txt{transition-delay:1.86s}
+.js .timeline.in:not(.built) .ts:nth-child(8) .ts-dot{transition-delay:2.00s}.js .timeline.in:not(.built) .ts:nth-child(8) .ts-stem{transition-delay:2.12s}.js .timeline.in:not(.built) .ts:nth-child(8) .ts-circ,.js .timeline.in:not(.built) .ts:nth-child(8) .ts-txt{transition-delay:2.22s}
+.tl-prog{opacity:0}.timeline.built .tl-prog{opacity:1}
+/* custom website section */
+.webgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;margin-top:52px;text-align:left}
+.site-demo{position:relative;padding-bottom:44px}
+.browser{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.b-top{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#fafbfd;border-bottom:1px solid var(--line)}
+.b-top i{width:10px;height:10px;border-radius:50%;background:#e2e6ec}
+.b-url{margin-left:12px;flex:1;background:#fff;border:1px solid var(--line);border-radius:999px;padding:2px 14px;font-size:.7rem;color:var(--muted);font-weight:600}
+.shots{position:relative;aspect-ratio:16/10;background:#eef1f5;overflow:hidden}
+.shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.03);transition:opacity .9s ease,transform 4.5s ease}
+.shots img.on{opacity:1;transform:none}
+.b-wrap{position:relative}
+.b-wrap .toast{bottom:18px}
+.site-demo .theme-chips{flex-wrap:wrap;position:static;margin-top:18px}
+.site-demo{padding-bottom:0}
+.theme-chips span{cursor:pointer}
+.toast{position:absolute;right:-14px;bottom:70px;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;
+  font-size:.78rem;line-height:1.35;box-shadow:var(--shadow-lg);max-width:270px;transform:translateY(12px);opacity:0;transition:opacity .5s,transform .5s cubic-bezier(.34,1.56,.64,1)}
+.toast.show{opacity:1;transform:none}
+.toast b{color:var(--ink)}.toast em{font-style:normal;color:var(--crimson);font-weight:700}
+.theme-chips{position:absolute;left:0;right:0;bottom:0;display:flex;gap:8px;justify-content:center}
+.theme-chips span{font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);transition:all .4s}
+.theme-chips span.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.webfeats{list-style:none;display:grid;gap:22px}
+.webfeats li{display:grid;grid-template-columns:48px 1fr;gap:16px}
+.wf-ico{width:48px;height:48px;border-radius:14px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center}
+.webfeats li:nth-child(2) .wf-ico{background:#f8e6ec;color:var(--crimson)}
+.webfeats li:nth-child(3) .wf-ico{background:var(--gold-soft);color:#8a7a33}
+.webfeats li:nth-child(4) .wf-ico{background:#e8eef3;color:var(--blue)}
+.wf-ico svg{width:24px;height:24px}
+.webfeats h3{font-size:1.15rem;margin-bottom:4px}
+.webfeats p{font-size:.95rem;line-height:1.6}
+.web-also{margin-top:40px;font-size:.95rem;color:var(--muted)}
+@media (max-width:960px){
+  .webgrid{grid-template-columns:1fr;gap:40px}
+  .toast{right:8px}
+}
+@media (max-width:560px){
+  .toast{bottom:56px;max-width:230px;font-size:.72rem}
+}
+
+/* hero: headline + money machine flow (ported from /crmmm, light scheme) */
+.hero h1.big{font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.02;letter-spacing:-.03em;max-width:none;margin:0 auto 24px}
+.hero h1.big span{display:block;color:var(--teal)}
+.hero .lead.sub{max-width:40ch;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.55;margin:0 auto 36px}
+@keyframes rise{to{opacity:1;transform:none}}
+.js .hero .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero .r1{animation-delay:.08s}.js .hero .r2{animation-delay:.18s}.js .hero .r3{animation-delay:.28s}.js .hero .r4{animation-delay:.45s}
+.hm-window{max-width:1040px;margin:64px auto 0;text-align:left;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden}
+.hm-bar{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);background:#fafbfd;font-size:.75rem;font-weight:600;color:var(--muted)}
+.hm-dots{display:flex;gap:7px}.hm-dots i{width:10px;height:10px;border-radius:50%;background:#e2e6ec;display:block}
+.hm-live{margin-left:auto;display:flex;align-items:center;gap:.45rem;color:#16a34a;font-weight:700}
+.hm-live:before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.hm{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr) auto;gap:56px;align-items:center;padding:44px 40px 40px;
+  background-image:linear-gradient(to right,rgba(37,92,142,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(37,92,142,.05) 1px,transparent 1px);background-size:32px 32px}
+.hm-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.hm-wires path{fill:none;stroke:#cfd8e3;stroke-width:1.5}
+.hm-wires path.flowing{stroke:var(--crimson);stroke-dasharray:6 8;animation:hmdash 1.2s linear infinite}
+.hm-wires circle{fill:var(--crimson);filter:drop-shadow(0 0 6px rgba(173,52,87,.8))}
+@keyframes hmdash{to{stroke-dashoffset:-28}}
+.hm-col{position:relative;z-index:1;display:grid;gap:14px}
+.hm-node{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.8rem;line-height:1.35;
+  box-shadow:0 2px 8px rgba(29,35,48,.04);transition:border-color .3s,box-shadow .3s,background .3s}
+.hm-node .ic{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal);transition:background .3s,color .3s}
+.hm-node .ic svg{width:18px;height:18px}
+.hm-node b{display:block;font-weight:700;color:var(--ink)}
+.hm-node span{display:block;color:var(--muted);font-size:.72rem}
+.hm-node.on{border-color:rgba(173,52,87,.45);background:#fdf3f6;box-shadow:0 0 24px -6px rgba(173,52,87,.45)}
+.hm-node.on .ic{background:var(--crimson);color:#fff}
+.hm-engine{position:relative;z-index:1;border:1px solid rgba(37,92,142,.35);border-radius:18px;padding:26px 22px;text-align:center;
+  background:radial-gradient(ellipse 90% 80% at 50% 0%,rgba(37,92,142,.12),transparent 70%),#fff;box-shadow:0 18px 40px -16px rgba(37,92,142,.35)}
+.hm-engine h3{font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1;margin-bottom:6px;color:var(--teal)}
+.hm-engine p{font-size:.75rem;color:var(--muted);margin-bottom:18px;line-height:1.4}
+.hm-parts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hm-parts div{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 8px;font-size:.75rem;font-weight:700;color:var(--ink);display:grid;justify-items:center;gap:6px}
+.hm-parts svg{width:22px;height:22px;color:var(--crimson)}
+.hm-eng-top{display:flex;align-items:center;gap:8px;margin:-10px -6px 14px;padding-bottom:10px;border-bottom:1px dashed rgba(37,92,142,.25);font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hm-leds{display:flex;gap:4px}.hm-leds i{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:hmled 1.6s infinite}
+.hm-leds i:nth-child(2){background:var(--gold);animation-delay:.25s}.hm-leds i:nth-child(3){background:var(--crimson);animation-delay:.5s}
+@keyframes hmled{0%,100%{opacity:1}50%{opacity:.3}}
+.hm-rpm{margin-left:auto;color:#16a34a;background:#e8f7ee;border-radius:999px;padding:1px 8px;letter-spacing:.08em}
+.hm-eng-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;text-align:left}
+.hm-eng-head h3{margin-bottom:4px}.hm-eng-head p{margin:0}
+.hm-gears{position:relative;width:62px;height:56px;flex:none}
+.hm-gears svg{position:absolute}
+.hm-gears .g1{width:44px;height:44px;left:0;top:0;fill:var(--teal);animation:hmspin 6s linear infinite}
+.hm-gears .g2{width:30px;height:30px;left:34px;top:28px;fill:var(--crimson);animation:hmspin 4.4s linear infinite reverse}
+.hm-belt{margin-bottom:14px}
+.hm-track{position:relative;height:8px;border-radius:999px;background:repeating-linear-gradient(90deg,#dfe6ee 0 8px,#eef2f6 8px 16px);background-size:32px 8px;animation:hmbelt 1s linear infinite;overflow:hidden}
+@keyframes hmbelt{to{background-position:32px 0}}
+.hm-pkt{position:absolute;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--crimson);box-shadow:0 0 8px rgba(173,52,87,.7);animation:hmpkt 4s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes hmpkt{0%{left:0}25%{left:calc(33.3% - 4px)}50%{left:calc(66.6% - 4px)}75%,100%{left:calc(100% - 8px)}}
+.hm-stages{display:grid;grid-template-columns:repeat(4,1fr);margin-top:6px;font-size:.6rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hm-stages span:nth-child(2){text-align:center;transform:translateX(-12%)}.hm-stages span:nth-child(3){text-align:center;transform:translateX(12%)}.hm-stages span:last-child{text-align:right}
+.hm-engine{transition:box-shadow .4s,border-color .4s}
+.hm-engine.working{border-color:var(--crimson);box-shadow:0 0 0 4px rgba(173,52,87,.08),0 18px 40px -12px rgba(173,52,87,.45)}
+.hm-engine.working .g1{animation-duration:1.6s}.hm-engine.working .g2{animation-duration:1.2s}
+.hm-engine.working .hm-leds i{animation-duration:.4s}
+.hm-spin{animation:hmspin 9s linear infinite}
+@keyframes hmspin{to{transform:rotate(360deg)}}
+.hm-cash{position:relative;z-index:1;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#22c55e;color:#fff;font-size:2rem;font-weight:800;
+  box-shadow:0 0 0 10px rgba(34,197,94,.12)}
+.hm-cash.hit{animation:hmcash .7s ease-out}
+@keyframes hmcash{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(34,197,94,.55)}40%{transform:scale(1.12)}100%{transform:scale(1);box-shadow:0 0 0 22px rgba(34,197,94,0)}}
+.hm-cap{border-top:1px solid var(--line);padding:14px 20px;font-size:.84rem;color:var(--muted);text-align:center;background:#fafbfd}
+.hm-cap b{color:var(--ink)}
+#hm-msg{transition:opacity .2s}
+/* proof section: CRM picture + numbers */
+.proof .mock{margin:52px auto 0;border-bottom:1px solid var(--line);border-radius:22px;animation:none}
+.proof .strip-in{display:grid;grid-template-columns:repeat(4,1fr);margin:40px auto 0;max-width:1040px}
+.proof .strip-in strong{display:block;font-size:2.1rem;color:var(--teal);font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.proof .strip-in span{font-size:.88rem;color:var(--muted);font-weight:600}
+@media (max-width:960px){
+  .hm{gap:36px;padding:36px 24px 28px}
+}
+@media (max-width:820px){
+  .hm{grid-template-columns:minmax(0,1fr);gap:34px;padding:28px 16px 24px}
+  .hm-in{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hm-in .hm-node{flex-direction:column;text-align:center;padding:12px 6px;min-width:0;font-size:.74rem}
+  .hm-in .hm-node span{display:none}
+  .hm-out{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .hm-out .hm-node{min-width:0;padding:10px;font-size:.74rem}
+  .hm-cash{justify-self:center}
+  .proof .strip-in{grid-template-columns:repeat(2,1fr);gap:24px}
+}
+@media (prefers-reduced-motion:reduce){.hm-gears svg,.hm-track,.hm-pkt,.hm-leds i{animation:none}.js .hero .rise{opacity:1;transform:none;animation:none}}
+
+/* offer */
+.offer{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start;margin-top:52px}
+.checklist{list-style:none;display:grid;gap:4px}
+.checklist li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.checklist svg{flex:0 0 24px;width:24px;height:24px;color:var(--teal);margin-top:2px}
+.price-card{position:sticky;top:100px;background:#fff;border-radius:22px;padding:40px 36px;box-shadow:var(--shadow-lg);border:1px solid var(--line);text-align:center}
+.price-card .eyebrow{margin-bottom:6px}
+.price-card h3{font-size:1.5rem}
+.price{font-size:3.6rem;font-weight:800;color:var(--ink);line-height:1;margin:22px 0 6px}
+.price-card .sub{color:var(--muted);font-size:.92rem;margin-bottom:26px}
+.price-card .btn{width:100%;justify-content:center;margin-bottom:12px}
+.price.quote{font-size:2.6rem}
+.qsteps{list-style:none;counter-reset:q;text-align:left;margin:0 0 26px;display:grid;gap:12px}
+.qsteps li{counter-increment:q;display:flex;gap:12px;align-items:flex-start;font-size:.92rem;line-height:1.5}
+.qsteps li:before{content:counter(q);flex:0 0 26px;height:26px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.qsteps b{color:var(--ink)}
+.guarantee{margin-top:24px;background:var(--gold-soft);border-radius:14px;padding:18px 20px;text-align:left;font-size:.9rem;color:var(--olive);line-height:1.55}
+.guarantee b{display:block;margin-bottom:4px}
+.after{margin-top:18px;font-size:.85rem;color:var(--muted);line-height:1.55}
+
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.stars{color:var(--gold);letter-spacing:3px;margin-bottom:14px}
+.tcard blockquote{font-size:.98rem;color:var(--body);flex:1}
+.who{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.who img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.who b{display:block;color:var(--ink);line-height:1.3}
+.who span{font-size:.82rem;color:var(--muted);line-height:1.3}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.about img{border-radius:22px;box-shadow:var(--shadow-lg)}
+.about ul{margin:18px 0 0 20px}
+.about li{margin-bottom:6px}
+
+/* faq */
+.faq{max-width:840px;margin:48px auto 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:0 26px}
+.faq summary{cursor:pointer;list-style:none;font-weight:700;color:var(--ink);padding:20px 0;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--teal);font-size:1.4rem;line-height:1}
+.faq details[open] summary:after{content:"−"}
+.faq details p{padding-bottom:22px}
+
+/* final cta */
+.final{background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 55%,var(--blue) 100%);color:#e6eef7;border-radius:28px;padding:80px 40px;text-align:center;position:relative;overflow:hidden}
+.final h2{color:#fff;font-size:clamp(2rem,4vw,3rem)}
+.final .lead{color:#dbe6f2;margin-bottom:34px}
+.final .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+
+/* footer */
+footer{background:var(--ink);color:#aab2c0;padding:56px 0 40px;margin-top:96px;font-size:.85rem}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+footer img{height:38px;width:auto;margin-bottom:16px}
+footer a{color:#dbe2ec;text-decoration:none}
+footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;font-size:.78rem;line-height:1.6}
+
+/* ===== motion (pattern from opaa-ads reference, brand colors) ===== */
+@keyframes pulse-slow{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ring{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.18,1.45);opacity:0}}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(37,92,142,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(37,92,142,.06) 1px,transparent 1px);
+  background-size:40px 40px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 85%);mask-image:linear-gradient(to bottom,#000 0%,transparent 85%)}
+.hero .wrap{position:relative;z-index:1}
+.blob{position:absolute;z-index:0;border-radius:50%;filter:blur(90px);pointer-events:none}
+.blob-a{top:60px;left:6%;width:340px;height:340px;background:rgba(37,92,142,.20);animation:pulse-slow 6s cubic-bezier(.4,0,.6,1) infinite}
+.blob-b{top:220px;right:5%;width:280px;height:280px;background:rgba(173,52,87,.14);animation:pulse-slow 9s cubic-bezier(.4,0,.6,1) infinite 1.5s}
+.blob-c{top:520px;left:40%;width:260px;height:260px;background:rgba(203,188,121,.18);animation:pulse-slow 7s cubic-bezier(.4,0,.6,1) infinite .8s}
+#cursor-glow{position:fixed;top:0;left:0;z-index:60;mix-blend-mode:multiply;width:560px;height:560px;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,92,142,.10) 0%,rgba(37,92,142,.04) 35%,transparent 70%);
+  transform:translate(-500px,-500px) translate(-50%,-50%);opacity:0;transition:opacity .3s}
+body.has-glow #cursor-glow{opacity:1}
+.nav,.section,.strip,footer,.hero{position:relative}
+.nav{z-index:50}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--crimson);box-shadow:0 0 8px var(--crimson);animation:pulse-slow 1.6s ease-in-out infinite;display:inline-block}
+.mock{animation:float 7s ease-in-out infinite}
+.btn-primary{position:relative}
+.btn-primary.pulse:after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid var(--crimson);animation:ring 2.2s ease-out infinite;pointer-events:none}
+.phase.done{animation:none}
+.phase.done small:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);margin-right:6px;vertical-align:middle;animation:pulse-slow 2s ease-in-out infinite}
+.pillar,.step,.tcard{transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1),border-color .3s}
+.pillar:hover,.step:hover,.tcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cfdbe8}
+.nav img{transition:transform .3s}.nav a:hover img{transform:scale(1.03)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  #cursor-glow{display:none}
+}
+
+@media (max-width:960px){
+  .nav-links{display:none}
+  .cards3,.tgrid,.steps{grid-template-columns:1fr}
+  .compare,.pillars,.offer,.about{grid-template-columns:1fr}
+  .phase-row{grid-template-columns:repeat(2,1fr)}
+  .strip .wrap{grid-template-columns:repeat(2,1fr);gap:24px}
+  .price-card{position:static}
+  .mock-body{grid-template-columns:1fr}.mock-side{display:none}
+  .mock-cols{grid-template-columns:repeat(2,1fr)}
+  .mock-stats{grid-template-columns:repeat(2,1fr)}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .section{padding:72px 0}
+  .nav .btn{display:none}
+  .pillar{grid-template-columns:1fr}
+  .phases{padding:28px 20px}
+  .final{padding:56px 22px;border-radius:20px}
+}
+</style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js')</script>
+<div id="cursor-glow" aria-hidden="true"></div>
 
-<header class="hdr" id="hdr">
+
+<nav class="nav">
   <div class="wrap">
-    <a class="brand" href="/" target="_blank" rel="noopener noreferrer"><img src="/assets/logo.png" alt="Systemology"></a>
-    <ul class="menu" id="menu">
-      <li>
-        <button class="menu-btn" aria-expanded="false">Offers <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.78 5.22a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L3.22 6.28a.75.75 0 0 1 1.06-1.06L8 8.94l3.72-3.72a.75.75 0 0 1 1.06 0Z"/></svg></button>
-        <div class="mega">
-          <a href="/crmmm/" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><div><b>Lofty CRM Money Machine</b><span>Your CRM set up to prospect and sell on day one</span></div></a>
-          <a href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.9.8 3.1 2.6 3.5 5.2"/></svg></div><div><b>Sales Systems Mastermind</b><span>Weekly group coaching, Tuesdays at 1pm PT</span></div></a>
-          <a href="/ltn/" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><b>Lifetime Nurture System</b><span>Emails that keep your database warm for life</span></div></a>
-        </div>
-      </li>
-      <li>
-        <button class="menu-btn" aria-expanded="false">Nurture emails <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.78 5.22a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L3.22 6.28a.75.75 0 0 1 1.06-1.06L8 8.94l3.72-3.72a.75.75 0 0 1 1.06 0Z"/></svg></button>
-        <div class="mega">
-          <a href="https://systemology.agency/deal-of-the-week-pro/" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg></div><div><b>Deal of the Week Pro</b><span>3 finished emails for your market, every Tuesday</span></div></a>
-          <a href="/ltn/" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20h18M6 16l4-5 3 3 5-7"/></svg></div><div><b>Market Update</b><span>Your local numbers in plain English. Coming soon</span></div></a>
-          <a href="/ltn/" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg></div><div><b>Buyer, seller and Q&amp;A emails</b><span>Stories and answers your sphere reads. Coming soon</span></div></a>
-        </div>
-      </li>
-      <li>
-        <button class="menu-btn" aria-expanded="false">Resources <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.78 5.22a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L3.22 6.28a.75.75 0 0 1 1.06-1.06L8 8.94l3.72-3.72a.75.75 0 0 1 1.06 0Z"/></svg></button>
-        <div class="mega">
-          <a href="https://268whexy4zj.typeform.com/to/Vnj4U1fK" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><b>Free System Check Up</b><span>A short form, then a plan for your business</span></div></a>
-          <a href="https://www.facebook.com/groups/2193749534159104" target="_blank" rel="noopener noreferrer"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><div><b>Facebook community</b><span>Agents swapping what works in their systems</span></div></a>
-        </div>
-      </li>
-      <li class="m-only"><a class="btn primary" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Book a call</a></li>
-      <li class="m-only"><a class="btn ghost" href="https://268whexy4zj.typeform.com/to/Vnj4U1fK" target="_blank" rel="noopener noreferrer">Get my free System Check Up</a></li>
+    <a href="/"><img src="/assets/logo.png" alt="Systemology"></a>
+    <ul class="nav-links">
+      <li><a href="#who">Who it's for</a></li>
+      <li><a href="#what">What you get</a></li>
+      <li><a href="#website">Website</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#stories">Client stories</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
-    <div class="hdr-cta">
-      <a class="btn ghost sm" href="https://268whexy4zj.typeform.com/to/Vnj4U1fK" target="_blank" rel="noopener noreferrer">Free System Check Up</a>
-      <a class="btn primary sm" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Book a call</a>
+    <a class="btn btn-primary" href="#offer">Get my quote</a>
+  </div>
+</nav>
+
+<header class="hero center">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div>
+  <div class="wrap">
+    <div class="pill rise"><span class="live-dot"></span><b>DONE FOR YOU</b> Lofty CRM Money Machine</div>
+    <h1 class="big rise r1">CRMs don't suck. <span>Your system does.</span></h1>
+    <p class="lead sub rise r2">The money is in the follow-up. No system to follow up means no money. We build your Lofty CRM into a machine that follows up for you, so you can sell on day one.</p>
+    <div class="hero-ctas rise r3">
+      <a class="btn btn-primary" href="#offer">Get my quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#what">See what's included</a>
     </div>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="hm-window rise r4" aria-label="How the CRM Money Machine works: leads come in, the CRM organizes and automates, and the outputs turn into closed business">
+      <div class="hm-bar"><div class="hm-dots"><i></i><i></i><i></i></div>How it works<span class="hm-live">Running</span></div>
+      <div class="hm" id="hm">
+        <svg class="hm-wires" aria-hidden="true"></svg>
+        <div class="hm-col hm-in">
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h12l-1 7a5 5 0 0 1-10 0z"/><path d="M12 15v6M8 21h8"/></svg></div><div><b>Lead magnets</b><span>Guides, home values, landing pages</span></div></div>
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><b>Google Business</b><span>Searches and reviews</span></div></div>
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div><div><b>Social media</b><span>Facebook and Instagram</span></div></div>
+        </div>
+        <div class="hm-engine">
+          <div class="hm-eng-top"><span class="hm-leds" aria-hidden="true"><i></i><i></i><i></i></span><span>Sales system</span><span class="hm-rpm">ON</span></div>
+          <div class="hm-eng-head">
+            <div class="hm-gears" aria-hidden="true">
+              <svg class="g1" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M50.0 12.0 L57.5 2.6 L64.8 4.3 L67.3 16.1 L72.3 19.3 L83.9 16.1 L88.8 21.8 L83.9 32.7 L86.1 38.3 L97.4 42.5 L98.0 50.0 L87.5 55.9 L86.1 61.7 L92.8 71.8 L88.8 78.2 L76.9 76.9 L72.3 80.7 L71.8 92.8 L64.8 95.7 L55.9 87.5 L50.0 88.0 L42.5 97.4 L35.2 95.7 L32.7 83.9 L27.7 80.7 L16.1 83.9 L11.2 78.2 L16.1 67.3 L13.9 61.7 L2.6 57.5 L2.0 50.0 L12.5 44.1 L13.9 38.3 L7.2 28.2 L11.2 21.8 L23.1 23.1 L27.7 19.3 L28.2 7.2 L35.2 4.3 L44.1 12.5Z M62 50 A12 12 0 1 0 38 50 A12 12 0 1 0 62 50Z"/></svg>
+              <svg class="g2" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M50.0 14.0 L59.4 2.9 L68.4 5.7 L70.0 20.1 L75.5 24.5 L89.9 23.3 L94.3 31.6 L85.3 43.0 L86.0 50.0 L97.1 59.4 L94.3 68.4 L79.9 70.0 L75.5 75.5 L76.7 89.9 L68.4 94.3 L57.0 85.3 L50.0 86.0 L40.6 97.1 L31.6 94.3 L30.0 79.9 L24.5 75.5 L10.1 76.7 L5.7 68.4 L14.7 57.0 L14.0 50.0 L2.9 40.6 L5.7 31.6 L20.1 30.0 L24.5 24.5 L23.3 10.1 L31.6 5.7 L43.0 14.7Z M63 50 A13 13 0 1 0 37 50 A13 13 0 1 0 63 50Z"/></svg>
+            </div>
+            <div><h3>CRM</h3><p>Your Lofty, built into a machine</p></div>
+          </div>
+          <div class="hm-belt" aria-label="Every lead moves through your pipeline stages">
+            <div class="hm-track"><i class="hm-pkt"></i></div>
+            <div class="hm-stages"><span>New</span><span>Nurture</span><span>Appt</span><span>Closed</span></div>
+          </div>
+          <div class="hm-parts">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Database</div>
+            <div><svg class="hm-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Automation</div>
+          </div>
+        </div>
+        <div class="hm-col hm-out">
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div><div><b>Automated scheduling</b></div></div>
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><b>Lifetime nurture</b></div></div>
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div><b>Lead conversion</b></div></div>
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><b>Performance reporting</b></div></div>
+        </div>
+        <div class="hm-cash" aria-hidden="true">$</div>
+      </div>
+      <div class="hm-cap"><span id="hm-msg">Leads come in from every source. The CRM organizes them, follows up and books the next step.</span></div>
+    </div>
   </div>
 </header>
 
-<main>
-<div class="hero">
-  <div class="wrap">
-    <span class="pill static seq"><i>Done for you</i>Lofty CRM Money Machine</span>
-    <h1 class="seq d1">CRMs don't suck. Your system does.</h1>
-    <p class="sub seq d2">The money is in the follow-up. No system to follow up means no money. We build your Lofty CRM into a machine that follows up for you, so you can sell on day one.</p>
-    <div class="actions seq d3">
-      <a class="btn primary" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Book a call</a>
-      <a class="btn ghost" href="https://268whexy4zj.typeform.com/to/Vnj4U1fK" target="_blank" rel="noopener noreferrer">Get my free System Check Up</a>
-    </div>
 
-    <div class="window seq d4" aria-label="How the CRM Money Machine works: leads come in, the CRM organizes and automates, and the outputs turn into closed business">
-      <div class="bar"><div class="dots"><i></i><i></i><i></i></div>How it works<span class="live">Running</span></div>
-      <div class="machine" id="machine">
-        <svg class="wires" aria-hidden="true"></svg>
-        <div class="col in">
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h12l-1 7a5 5 0 0 1-10 0z"/><path d="M12 15v6M8 21h8"/></svg></div><div><b>Lead magnets</b><span>Guides, home values, landing pages</span></div></div>
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><b>Google Business</b><span>Searches and reviews</span></div></div>
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div><div><b>Social media</b><span>Facebook and Instagram</span></div></div>
-        </div>
-        <div class="engine">
-          <h3>CRM</h3>
-          <p>Lofty, set up for how you sell</p>
-          <div class="parts">
-            <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Database</div>
-            <div><svg class="spin" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Automation</div>
+<section class="section center" id="who">
+  <div class="wrap">
+    <span class="eyebrow">Who it's for</span>
+    <h2>Built for agents who want to sell, not set up software</h2>
+    <p class="lead">We set up your CRM so you can prospect and sell on day one.</p>
+    <div class="cards3" style="text-align:left">
+      <div class="aud">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Newer agents</h3>
+        <p>You want Lofty and you want it set up right the first time, without spending months learning it.</p>
+      </div>
+      <div class="aud">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M17 11l2 2 4-4"/></svg></div>
+        <h3>Solo agents with a TC or assistant</h3>
+        <p>You want to work as many deals as possible, with one system that tracks every lead and every file.</p>
+      </div>
+      <div class="aud">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.5"/><circle cx="17" cy="9" r="3"/><path d="M1.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><path d="M15 14.5c3.5-.5 7 1 7 5"/></svg></div>
+        <h3>Team leaders</h3>
+        <p>You want every agent on your team prospecting and closing from one shared system that you can see.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft center">
+  <div class="wrap">
+    <span class="eyebrow">Why it matters</span>
+    <h2>You bought the CRM. Now it needs to work.</h2>
+    <p class="lead">The tags are a mess, the pipeline is half built, texting isn't registered and the website just sits there. Leads go cold while you follow up by hand.</p>
+    <div class="compare" style="text-align:left">
+      <div class="cbox old">
+        <h3>Setting it up yourself</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Setup and the learning curve take months</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Every screen feels too complex to finish</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Support doesn't understand your business</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>It doesn't connect to the tools you already use</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Follow-up depends on your memory</li>
+        </ul>
+      </div>
+      <div class="cbox new">
+        <h3>The CRM Money Machine</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Built for you in 6 phases, with an update after each one</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>A walkthrough call shows you how to drive it</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Built by people who sell real estate</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Your email, domain, MLS and lead sources connected</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Automations follow up with every lead for life</li>
+        </ul>
+      </div>
+    </div>
+    <p class="frame">Every real estate business runs on three parts: <b>opportunities, systems and skills.</b> Most agents skip systems and go from leads straight to skills. That's why they're exhausted.</p>
+  </div>
+</section>
+
+<section class="section center" id="what">
+  <div class="wrap">
+    <span class="eyebrow">What you get</span>
+    <h2>The 4 pillars of a fully functioning sales machine</h2>
+    <p class="lead">Take one away and the machine leaks leads. We build all four, so your CRM follows up and tracks every lead and client for you.</p>
+    <div class="machine" role="img" aria-label="Four pillars, Settings, Organization, Website and Automations, each feeding down into one funnel labeled Your Sales Machine.">
+      <div class="stage">
+        <svg class="legs" viewBox="0 0 984 700" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="fun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#255c8e"/><stop offset="1" stop-color="#1d2330"/></linearGradient>
+          </defs>
+          <rect class="leg" x="424" y="414" width="28" height="86" fill="#255c8e"/>
+          <rect class="leg" x="459" y="238" width="28" height="262" fill="#ad3457"/>
+          <rect class="leg" x="495" y="188" width="28" height="312" fill="#313624"/>
+          <rect class="leg" x="531" y="390" width="28" height="110" fill="#4d7491"/>
+          <line class="flow" x1="438" y1="430" x2="438" y2="496"/>
+          <line class="flow" x1="473" y1="256" x2="473" y2="496"/>
+          <line class="flow" x1="509" y1="206" x2="509" y2="496"/>
+          <line class="flow" x1="545" y1="406" x2="545" y2="496"/>
+          <g class="funnel">
+            <polygon points="416,498 568,498 492,664" fill="url(#fun)"/>
+            <line x1="465" y1="612" x2="519" y2="612" stroke="#cbbc79" stroke-width="3"/>
+            <circle class="tip-dot" cx="492" cy="682" r="7" fill="#ad3457"/>
+          </g>
+        </svg>
+        <div class="slot s-web"><div class="mcard l c-web">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="15" rx="2"/><path d="M2 7h20"/><path d="M8 15v-3l4-3 4 3v3"/><path d="M8 21h8"/></svg></div>
+          <div><small>Capture</small><h3>Website</h3><p>A Lofty site with IDX search, featured areas, reviews and landing pages</p></div>
+        </div></div>
+        <div class="slot s-auto"><div class="mcard c-auto">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="18" cy="12" r="3"/><path d="M7 6c5 0 4 6 8 6M7 18c5 0 4-6 8-6M7 12h8"/></svg></div>
+          <div><small>Follow up</small><h3>Automations</h3><p>Lifetime Nurture, an AI welcome bot and deal workflows</p></div>
+        </div></div>
+        <div class="slot s-set"><div class="mcard l c-set">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="11" rx="2"/><path d="M2 7l7.5 5L17 7"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M18.5 13.5v1.5M18.5 20v1.5M14.5 17.5H16M21 17.5h1.5"/></svg></div>
+          <div><small>Connect</small><h3>Settings</h3><p>Calls, texts, email, your domains, MLS and IDX</p></div>
+        </div></div>
+        <div class="slot s-org"><div class="mcard c-org">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="5" rx="1"/><rect x="14" y="10" width="7" height="5" rx="1"/><rect x="14" y="17" width="7" height="5" rx="1"/><path d="M6.5 8v9.5H14M6.5 12.5H14"/></svg></div>
+          <div><small>Track</small><h3>Organization</h3><p>Contacts imported and tagged, with a pipeline from prospect to closed</p></div>
+        </div></div>
+      </div>
+      <svg class="mfunnel" viewBox="0 0 150 130" aria-hidden="true">
+        <rect x="45" y="0" width="12" height="40" fill="#255c8e"/><rect x="61" y="0" width="12" height="40" fill="#4d7491"/>
+        <rect x="77" y="0" width="12" height="40" fill="#ad3457"/><rect x="93" y="0" width="12" height="40" fill="#313624"/>
+        <polygon points="35,40 115,40 75,112" fill="#255c8e"/>
+        <circle class="tip-dot" cx="75" cy="122" r="6" fill="#ad3457"/>
+      </svg>
+      <div class="machine-label"><strong>Your Sales Machine</strong><span>Every lead captured, followed up and tracked until close</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft center" id="website">
+  <div class="wrap">
+    <span class="eyebrow">Custom website design</span>
+    <h2>Your website, designed for your brand. Not a template.</h2>
+    <p class="lead">Lofty comes with a stock website that most agents never finish. We design yours around your brand and your market, then connect it to your CRM so every search and click shows up on the lead's record.</p>
+    <div class="webgrid">
+      <div class="site-demo">
+        <div class="b-wrap">
+        <div class="browser">
+          <div class="b-top"><i></i><i></i><i></i></div>
+          <div class="shots">
+            <img src="/assets/clients/365hawaiire.jpg" alt="Home page of 365 Hawaii Group, a client website" data-url="365hawaiire.com" width="1200" height="750" class="on">
+            <img src="/assets/clients/365hawaiire-2.jpg" alt="Video library page of 365 Hawaii Group, a client website" data-url="365hawaiire.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/365hawaiire-3.jpg" alt="Luxury listings page of 365 Hawaii Group, a client website" data-url="365hawaiire.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/timmcbriderealestate.jpg" alt="Home page of Tim McBride, a client website" data-url="timmcbriderealestate.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/fingerlakeslifestyle.jpg" alt="Home page of Finger Lakes Lifestyle, a client website" data-url="fingerlakeslifestyle.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/valarieholman.jpg" alt="Home page of Valarie Holman Real Estate, a client website" data-url="valarieholman.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/milesawayteam.jpg" alt="Home page of Miles Away Team, a client website" data-url="milesawayteam.com" width="1200" height="750" loading="lazy">
+            <img src="/assets/clients/radhishahteam.jpg" alt="Home page of Radhi Shah Team, a client website" data-url="radhishahteam.com" width="1200" height="750" loading="lazy">
           </div>
         </div>
-        <div class="col out">
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div><div><b>Automated scheduling</b></div></div>
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><b>Lifetime nurture</b></div></div>
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div><b>Lead conversion</b></div></div>
-          <div class="mnode"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><b>Performance reporting</b></div></div>
+        <div class="toast" aria-hidden="true"><span class="live-dot"></span><div>New lead from your <em>home search</em></div></div>
         </div>
-        <div class="cash" aria-hidden="true">$</div>
+        <div class="theme-chips" aria-label="Client websites we built"><span class="on">Big Island, HI</span><span>Kona, HI</span><span>Kailua-Kona, HI</span><span>Scottsdale, AZ</span><span>Finger Lakes, NY</span><span>Wellington, CO</span><span>Greenville, SC</span><span>DFW, Texas</span></div>
       </div>
-      <div class="machine-cap"><span id="machine-msg">Leads come in from every source. The CRM organizes them, follows up and books the next step.</span></div>
+      <ul class="webfeats">
+        <li><div class="wf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></div>
+          <div><h3>Your brand, not ours</h3><p>Your logo, your headshots, your bio and a 3-color palette picked for your brand. No logo yet? Our design team makes one for you.</p></div></li>
+        <li><div class="wf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></div>
+          <div><h3>Built for shoppers</h3><p>Buyers and sellers come for homes, so your site leads with search, listings and your featured areas. It's built to capture leads, not just to look good.</p></div></li>
+        <li><div class="wf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+          <div><h3>Your market, front and center</h3><p>Your 3 main cities as featured areas, with more in the menu. Each area page fills itself with prices, listings, recent sales, schools and trends.</p></div></li>
+        <li><div class="wf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div>
+          <div><h3>Connected to your CRM</h3><p>Every search, click and saved home lands on the lead's record. You sent 10 homes and they opened 2 of them five times. Now you know what to call about.</p></div></li>
+      </ul>
     </div>
-  </div>
-</div>
-
-<section>
-  <div class="wrap">
-    <div class="head">
-      <h2>What an effective CRM does for you.</h2>
-      <p>When the system is set up right, the CRM stops being a chore and starts paying you back.</p>
-    </div>
-    <div class="grid3">
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg></div>
-        <h3>Stay in touch without looking dumb.</h3>
-        <p>The right message reaches the right person at the right time, so every touch feels personal.</p>
-      </div>
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></div>
-        <h3>More money in less time.</h3>
-        <p>Automations handle the busywork. Your hours go to calls, showings and closings.</p>
-      </div>
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Zero stress.</h3>
-        <p>You always know where every client stands, and nobody slips through the cracks.</p>
-      </div>
-    </div>
+    <p class="web-also">Also included: your own domain, IDX listings from your MLS, reviews pulled from Zillow and Google, and a blog if you want one.</p>
   </div>
 </section>
 
-<section>
+<section class="section center" id="how">
   <div class="wrap">
-    <div class="head">
-      <h2>Don't get stuck with a CRM you can't use.</h2>
-      <p>Most agents pay for Lofty and never get it working. Here is what usually goes wrong, and what your CRM should be doing instead.</p>
+    <span class="eyebrow">How it works</span>
+    <h2>You're done in 3 easy steps</h2>
+    <p class="lead">Our Dream Team handles everything between them.</p>
+    <div class="steps" style="text-align:left">
+      <div class="step"><h3>Book your onboarding call</h3><p>We collect your logins, files and branding, and map your lead sources. You get a welcome email with a simple checklist.</p></div>
+      <div class="step"><h3>Book your walkthrough call</h3><p>Once the build is done, we walk you through your settings, website, templates and automations, and answer every question.</p></div>
+      <div class="step"><h3>Start driving</h3><p>Prospect, follow up and close from one system. Your nurture runs in the background from day one.</p></div>
     </div>
-    <div class="compare">
-      <div class="side stuck">
-        <h3>Where most setups get stuck</h3>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg><span><b>Slow setup and a steep learning curve.</b> Weeks of settings before you send a single message.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg><span><b>Too complex to use.</b> Especially if tech is not your thing.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg><span><b>Support that doesn't get it.</b> The help desk is not made of real estate agents.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg><span><b>Tools that don't talk to each other.</b> Critical tasks fall between the apps you already use.</span></li>
-        </ul>
-      </div>
-      <div class="side want">
-        <h3>What your CRM should do</h3>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Import your data properly, with tags and the contact details that matter</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Run on an organization framework that stays clean for years</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Track every lead and client so nothing gets forgotten</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Give you a website clients use, then ask for showings</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Offer landing pages that help prospects as they enter your world</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg><span>Automate short-term follow-up, lifetime nurture and your business processes</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head">
-      <h2>We build the machine. You drive it.</h2>
-      <p>You are the driver, not the mechanic. We build your CRM, teach you to drive it, and keep it running. Here is how the build goes.</p>
-    </div>
-    <ol class="steps">
-      <li><h3>Setup</h3><p>Lofty set up so you can drive it on day one. Calls, texts, one-to-one and bulk email, and your email and website domains configured the right way.</p></li>
-      <li><h3>Organization</h3><p>Your contacts imported, tagged and segmented, with a pipeline you can run every day.</p></li>
-      <li><h3>Website</h3><p>A complete Lofty website with IDX search, reviews, blogs and landing pages, built for buyers and sellers, not for looks.</p></li>
-      <li><h3>Automation</h3><p>Short-term nurture, lifetime nurture and custom automations, based on how your business works.</p></li>
-      <li><h3>Final walkthrough</h3><p>We walk you through the whole machine, step by step, like a final walkthrough before closing.</p></li>
-      <li><h3>Optimize and hand off</h3><p>We tune what needs tuning, answer your questions and hand you the keys.</p></li>
-    </ol>
-    <ul class="badges" aria-label="What you get">
-      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>A money-making machine</li>
-      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>A done-for-you system</li>
-      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>Industry-leading practices</li>
-      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>Lifetime upgrades</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head">
-      <h2>Built for agents who want to sell on day one.</h2>
-    </div>
-    <div class="grid3">
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.2-6 8-6s7 2 8 6"/></svg></div>
-        <h3>Newer agents</h3>
-        <p>Starting on Lofty and want it set up right the first time.</p>
-      </div>
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></svg></div>
-        <h3>Solo agents with a TC or assistant</h3>
-        <p>Want to work as many deals as possible without dropping a client.</p>
-      </div>
-      <div class="tile plain">
-        <div class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.9.8 3.1 2.6 3.5 5.2"/></svg></div>
-        <h3>Team leaders</h3>
-        <p>Want every agent on the team prospecting and closing from one system.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head center">
-      <h2>Agents who built their machine with us.</h2>
-    </div>
-    <div class="feature">
-      <figure class="quote big">
-        <div>
-          <blockquote>I hired Leo to set up a new CRM system for my real estate company. Working with him was extremely smooth and very easy. Leo communicated very professionally throughout the entire process and more importantly, I always knew where the project stood because we worked off of a shared Google doc so I always knew what was happening in real time. Most importantly, Leo delivered the project on time. For anyone looking for someone to implement their ideas and don't know where to start, or need anything tech related, I highly recommend Leo.</blockquote>
-          <figcaption class="who"><div><b>Maya Hiersoux</b><span>Maya Hiersoux &amp; Co, Santa Fe, NM</span></div></figcaption>
+    <div class="timeline" style="text-align:center">
+      <h3>What the Dream Team builds</h3>
+      <p>You get a status email at the end of every phase.</p>
+      <div class="tl">
+        <div class="tl-axis"></div>
+        <div class="tl-prog"></div>
+        <div class="ts">
+          <div class="ts-top">
+            <div class="ts-txt"><small>Phase 1</small><b>Setup</b><span>Settings, domains, calling, texting, MLS</span></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="19" height="18" rx="2"/><path d="M2.5 7.5h19"/><circle cx="12" cy="14.2" r="2"/><path d="M12 10.2v1.2M12 17v1.2M8 14.2h1.2M14.8 14.2H16M9.2 11.4l.8.8M14 16.2l.8.8M9.2 17l.8-.8M14 12.2l.8-.8"/></svg></div>
+            <div class="ts-stem"></div>
+          </div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot"></div>
         </div>
-        <div class="ph"><img src="/assets/t-maya.jpg" alt="Maya Hiersoux" loading="lazy"></div>
-      </figure>
-      <figure class="quote">
-        <blockquote>Leo &amp; Systemology has been a game-changer for my real estate business. I had no idea where to even begin, and the minute Leo stepped in I felt at ease. From the beginning, he outlined clear objectives based on our needs and created a project list that was specifically curated to what we wanted our desired outcomes to be. He has been communicative, thorough, and overall incredibly helpful. I'm so thrilled to be building my systems with Leo and Systemology as part of our team.</blockquote>
-        <figcaption class="who"><img src="/assets/t-melanie.jpg" alt="" loading="lazy"><div><b>Melanie Gundersheim</b><span>The Gundersheim Group, Boston, MA</span></div></figcaption>
-      </figure>
+        <div class="ts">
+          <div class="ts-top"></div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot">
+            <div class="ts-stem"></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="5.5" cy="4.5" rx="2.5" ry="1.2"/><path d="M3 4.5v3.5c0 .7 1.1 1.2 2.5 1.2S8 8.7 8 8V4.5"/><ellipse cx="12" cy="4.5" rx="2.5" ry="1.2"/><path d="M9.5 4.5v3.5c0 .7 1.1 1.2 2.5 1.2s2.5-.5 2.5-1.2V4.5"/><ellipse cx="18.5" cy="4.5" rx="2.5" ry="1.2"/><path d="M16 4.5v3.5c0 .7 1.1 1.2 2.5 1.2S21 8.7 21 8V4.5"/><path d="M5.5 11l6.5 5 6.5-5M12 11v5"/><path d="M4 20.5h16"/></svg></div>
+            <div class="ts-txt"><small>Phase 2</small><b>Organization</b><span>Data import, tags, pipeline, segments</span></div>
+          </div>
+        </div>
+        <div class="ts">
+          <div class="ts-top">
+            <div class="ts-txt"><small>Phase 3</small><b>Website</b><span>IDX, featured areas, reviews, blog</span></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20H4.5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v6"/><path d="M2.5 7.5h19"/><path d="M14 16l4-3.5 4 3.5M15 15.2V21h6v-5.8"/></svg></div>
+            <div class="ts-stem"></div>
+          </div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot"></div>
+        </div>
+        <div class="ts">
+          <div class="ts-top"></div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot">
+            <div class="ts-stem"></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="2.5" width="5" height="5" rx="1"/><rect x="3" y="15" width="5" height="5" rx="1"/><path d="M5.5 15v-3.5h15M15.5 7.5v4M17.5 9.5l3 2-3 2"/><circle cx="10.5" cy="11.5" r="1.2"/></svg></div>
+            <div class="ts-txt"><small>Phase 4</small><b>Automation</b><span>Lifetime Nurture and deal workflows</span></div>
+          </div>
+        </div>
+        <div class="ts">
+          <div class="ts-top">
+            <div class="ts-txt"><small>Phase 5</small><b>Walkthrough</b><span>Your keys, like closing on a house</span></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4"/><path d="M7 11v10M7 15h2.5M7 18h2"/><path d="M13 15.5l4.5-4 4.5 4M14 14.7V21h7v-6.3"/><path d="M11 7c3 0 5 1.5 6.5 4.5"/></svg></div>
+            <div class="ts-stem"></div>
+          </div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot"></div>
+        </div>
+        <div class="ts">
+          <div class="ts-top"></div>
+          <div class="ts-dot"></div>
+          <div class="ts-bot">
+            <div class="ts-stem"></div>
+            <div class="ts-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l3 3L8 16H5v-3z"/><path d="M12.5 5.5l3 3"/><circle cx="17.5" cy="17.5" r="2"/><path d="M17.5 13.8v1.2M17.5 20v1.2M13.8 17.5H15M20 17.5h1.2"/></svg></div>
+            <div class="ts-txt"><small>Phase 6</small><b>Fine-tune</b><span>Final adjustments and hand-off</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="section bg-soft center proof" id="proof">
+  <div class="wrap">
+    <span class="eyebrow">After the build</span>
+    <h2>What your Lofty looks like when it's working</h2>
+    <p class="lead">Leads come in, follow-ups go out and every deal has a stage. Here's a sample of a finished build.</p>
+    <div class="mock" aria-hidden="true">
+      <div class="mock-top"><i></i><i></i><i></i><span>Your Lofty CRM, after the build</span></div>
+      <div class="mock-body">
+        <div class="mock-side">
+          <div class="on">Pipeline</div><div>Leads</div><div>Smart Plans</div><div>Website</div><div>Transactions</div><div>Reports</div>
+        </div>
+        <div class="mock-main">
+          <div class="mock-stats">
+            <div class="mock-stat"><small>New leads</small><strong data-tick="2000">24</strong></div>
+            <div class="mock-stat"><small>Follow-ups due</small><strong data-tick="10000">9</strong></div>
+            <div class="mock-stat"><small>Nurture active</small><strong data-tick="5000">412</strong></div>
+            <div class="mock-stat"><small>Under contract</small><strong data-tick="40000">3</strong></div>
+          </div>
+          <div class="mock-cols">
+            <div class="mock-col"><h5>Prospect</h5>
+              <div class="lead-card"><b>Jordan P.</b>Zillow buyer, 2 bd<br><span class="tag t1">Buyer nurture</span></div>
+              <div class="lead-card"><b>Ana R.</b>Website sign-up<br><span class="tag t1">Buyer nurture</span></div></div>
+            <div class="mock-col"><h5>Active</h5>
+              <div class="lead-card"><b>Sam &amp; Lee K.</b>Showing Sat 10am<br><span class="tag t2">Hot</span></div>
+              <div class="lead-card"><b>Mira T.</b>Seller, CMA sent<br><span class="tag t3">Seller nurture</span></div></div>
+            <div class="mock-col"><h5>Under contract</h5>
+              <div class="lead-card"><b>Devon W.</b>Inspection Tue<br><span class="tag t2">Checklist 6/14</span></div></div>
+            <div class="mock-col"><h5>Closed</h5>
+              <div class="lead-card"><b>Priya N.</b>Closed, past client<br><span class="tag t1">Lifetime nurture</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="strip-in">
+    <div><strong data-count="73" data-suffix="+">73+</strong><span>CRM Money Machines built in 2024</span></div>
+    <div><strong data-count="6">6</strong><span>build phases, with an update after each</span></div>
+    <div><strong data-count="3">3</strong><span>tasks for you</span></div>
+    <div><strong data-count="1" data-prefix="Day ">Day 1</strong><span>you prospect and follow up</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="offer">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Everything included</span>
+      <h2>Everything in your build</h2>
+    </div>
+    <div class="offer">
+      <ul class="checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Lofty set up so you can drive it on day one</b></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Your data imported, tagged and segmented</b>, with a pipeline from prospect to closed</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Calls, texts, email and mass email</b>, plus your email and website domains</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>A2P 10DLC texting registration</b> so your texts stay compliant</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>A Lofty website</b> with IDX, reviews, a blog and landing pages</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Lifetime Nurture and short-term nurture</b> automations, plus an AI welcome bot</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>A transaction checklist</b> where your state uses one</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Onboarding call, 6-phase build and walkthrough call</b></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Community access</b> with tutorials and templates</div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg><div><b>Dream Team support</b> at dreamteam@systemology.agency</div></li>
+      </ul>
+      <aside class="price-card">
+        <span class="eyebrow">The CRM Money Machine</span>
+        <h3>Done-for-you Lofty build</h3>
+        <div class="price quote">Custom quote</div>
+        <p class="sub">Every build is scoped to your business: team size, how much data we move and which lead sources we connect.</p>
+        <ol class="qsteps">
+          <li><span><b>Book a call</b> and tell us about your business</span></li>
+          <li><span><b>We scope your build</b> across all 4 pillars</span></li>
+          <li><span><b>You get your quote</b> before anything starts</span></li>
+        </ol>
+        <a class="btn btn-primary" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Get my quote</a>
+        <div class="guarantee"><b>Our build promise</b>At your walkthrough call, every item on your build list works. If something on the list breaks in the first 30 days, we fix it at no cost.</div>
+        <p class="after">Optional after your build: ongoing support in our Sales Systems Mastermind, month to month.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft center" id="stories">
+  <div class="wrap">
+    <span class="eyebrow">Client stories</span>
+    <h2>Agents who stopped fighting their systems</h2>
+    <div class="tgrid" style="text-align:left">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>Leo &amp; Systemology has been a game-changer for my real estate business. I had no idea where to even begin, and the minute Leo stepped in I felt at ease. He outlined clear objectives based on our needs and created a project list curated to the outcomes we wanted.</blockquote>
+        <div class="who"><img src="/assets/t-melanie.jpg" alt="Melanie Gundersheim"><div><b>Melanie Gundersheim</b><span>The Gundersheim Group, Boston, MA</span></div></div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>Leo has been a game changer in my business! He has a unique blend of understanding technology, operations and systems AND the unique challenges of real estate. He helped me implement the right systems and lead flow so I can deepen relationships and take care of clients.</blockquote>
+        <div class="who"><img src="/assets/t-kara.png" alt="Kara Chaffin Donofrio"><div><b>Kara Chaffin Donofrio</b><span>KCD Group, DC Metro / Annapolis, MD</span></div></div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>What sets Leo apart is his deep expertise in both tech and luxury real estate. He reorganizes fragmented data into precise, actionable systems and workflows that improve the buying, selling and agent experience.</blockquote>
+        <div class="who"><img src="/assets/t-tamina.png" alt="Tamina Aratari" style="object-position:22% center"><div><b>Tamina Aratari</b><span>Sarasota, FL</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap about">
-    <div class="photo"><img src="/assets/leo.jpg" alt="Leo Chen, CEO of Systemology" loading="lazy"></div>
+    <img src="/assets/leo.jpg" alt="Leo Chen">
     <div>
-      <h2>The CRM is still the most underrated tool in real estate.</h2>
-      <p class="big">I've been in your shoes selling real estate, and I still do.</p>
-      <p>I spent 15 years as a Director of IT, then years studying the playbooks of top real estate leaders and some of the largest teams in the country. I got tired of watching agents struggle with their CRM and tech stack.</p>
-      <p>So we built the CRM Money Machine from my own business and dozens of high-performing agents and teams. Once you have the machine and know how to drive it, it keeps working for you.</p>
-      <ul class="idea" aria-label="How we work"><li>Idea</li><li>Planning</li><li>Building</li></ul>
+      <span class="eyebrow">Who builds it</span>
+      <h2>Built by an agent who still sells</h2>
+      <p>I'm Leo Chen. I sell real estate, and I spent 15 years as Director of IT for a marketing startup. I built the CRM Money Machine from the systems I run in my own business and the ones I build for agents earning over 7 figures.</p>
+      <ul>
+        <li>Studied the playbooks of top coaches and large teams</li>
+        <li>Built 73+ CRM Money Machines in 2024</li>
+        <li>Runs the same Lofty system in his own real estate business</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="closing">
+<section class="section bg-soft" id="faq">
   <div class="wrap">
-    <h2>Let's build your money machine.</h2>
-    <p>Book a call. We'll look at your CRM and map out the build.</p>
-    <a class="btn primary" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Book a call</a>
+    <div class="center"><span class="eyebrow">FAQ</span><h2>Questions agents ask first</h2></div>
+    <div class="faq">
+      <details><summary>Do I need Lofty already?</summary><p>The build is for Lofty. If you don't have an account yet, we'll help you get set up on the right plan before onboarding.</p></details>
+      <details><summary>How long does the build take?</summary><p>[Build length pending.] You get a status email at the end of each of the 6 phases, so you always know where your build stands.</p></details>
+      <details><summary>What do I have to do?</summary><p>Three things: book your onboarding call, book your walkthrough call and start driving. We handle the rest.</p></details>
+      <details><summary>What do you need from me?</summary><p>Your Lofty login, connected email, social links, domain access, contact files, MLS and IDX details, logos and headshots, website colors, featured areas, office address, lender and vendor contacts and lead sources. For texting, we also need your LLC name, EIN and address to register A2P 10DLC.</p></details>
+      <details><summary>Is texting compliant?</summary><p>Yes. We register A2P 10DLC with your business details so your texts go through and stay compliant.</p></details>
+      <details><summary>I use another CRM. Can you move my contacts?</summary><p>Yes. Contact import is part of the build, and we've moved teams over from Follow Up Boss.</p></details>
+      <details><summary>How much does it cost?</summary><p>Every build is quoted for your business. The price depends on your team size, how much data we move and which lead sources we connect. Book a call and you get your quote before anything starts.</p></details>
+      <details><summary>What does it cost after the build?</summary><p>Nothing is required. If you want ongoing help, our Sales Systems Mastermind is optional and month to month.</p></details>
+      <details><summary>Is this for teams?</summary><p>Yes. We build one shared system for your whole team, and team rates apply to ongoing support for 3 or more agents.</p></details>
+      <details><summary>Do you guarantee results?</summary><p>We guarantee the build: every item on your build list works at your walkthrough, and we fix anything on the list that breaks in the first 30 days. We don't promise income. Results depend on how you use the system.</p></details>
+    </div>
   </div>
 </section>
-</main>
+
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="final">
+      <h2>Six phases. Three tasks. You drive on day one.</h2>
+      <p class="lead" style="margin:0 auto 34px">Tell us about your business and get a quote for your build.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Get my quote</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <img src="/assets/logo.png" alt="Systemology">
-        <p>Sales systems for real estate agents and teams.</p>
-      </div>
-      <div>
-        <h4>Offers</h4>
-        <ul>
-          <li><a href="/crmmm/" target="_blank" rel="noopener noreferrer">Lofty CRM Money Machine</a></li>
-          <li><a href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Sales Systems Mastermind</a></li>
-          <li><a href="/ltn/" target="_blank" rel="noopener noreferrer">Lifetime Nurture System</a></li>
-          <li><a href="https://systemology.agency/deal-of-the-week-pro/" target="_blank" rel="noopener noreferrer">Deal of the Week Pro</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get started</h4>
-        <ul>
-          <li><a href="https://268whexy4zj.typeform.com/to/Vnj4U1fK" target="_blank" rel="noopener noreferrer">Free System Check Up</a></li>
-          <li><a href="https://calendly.com/leochenrealtor/sss" target="_blank" rel="noopener noreferrer">Book a call</a></li>
-          <li><a href="/" target="_blank" rel="noopener noreferrer">Home</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="https://www.facebook.com/groups/2193749534159104" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          <li><a href="https://www.instagram.com/leochenre/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://www.threads.net/@leochenre" target="_blank" rel="noopener noreferrer">Threads</a></li>
-          <li><a href="https://twitter.com/SAgency23" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
-        </ul>
-      </div>
+    <div>
+      <img src="/assets/logo-white.png" alt="Systemology">
+      <p>AI systems and CRM builds for real estate agents and teams.</p>
     </div>
-    <div class="legal">&copy; 2026 Systemology Agency</div>
+    <div>
+      <p><b style="color:#fff">Support</b><br><a href="mailto:dreamteam@systemology.agency" target="_blank" rel="noopener noreferrer">dreamteam@systemology.agency</a></p>
+    </div>
+    <p class="fine">&copy; 2026 Systemology Agency. Lofty is a third-party product. Systemology is not affiliated with or endorsed by Lofty. Results depend on your use of the system. No income is guaranteed.</p>
   </div>
 </footer>
 
-<script src="/assets/home.js"></script>
-<script src="/assets/crm.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pulse ring on the main hero and price-card buttons
+  document.querySelectorAll('.hero .btn-primary, .price-card .btn-primary, .final .btn-primary')
+    .forEach(function(b){ b.classList.add('pulse'); });
+
+  // Scroll fade-ins, staggered within each group
+  var groups = ['.final .hero-ctas', '.mock',
+    '.strip-in > div', '.section .eyebrow', '.section h2', '.section .lead', '.frame',
+    '.cards3 > *', '.webgrid > *', '.webfeats li', '.web-also', '.compare > *', '.machine', '.steps > *', '.timeline',
+    '.checklist li', '.price-card', '.tgrid > *', '.about > *', '.faq details', '.final'];
+  var els = [];
+  groups.forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      if (el.classList.contains('reveal')) return;
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function(c){ return c.matches(sel); });
+      var i = sibs.indexOf(el);
+      if (i > 0) el.style.transitionDelay = Math.min(i * 90, 540) + 'ms';
+      el.classList.add('reveal'); els.push(el);
+    });
+  });
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  // Live ticking stats in the hero CRM picture
+  if (!reduce) {
+    document.querySelectorAll('[data-tick]').forEach(function(el){
+      setInterval(function(){
+        el.textContent = (+el.textContent + 1);
+        el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+      }, +el.dataset.tick);
+    });
+  }
+
+  // Hero money machine: draw wires, then run a lead from a source, through the CRM, to an outcome and the $ (ported from /crmmm)
+  (function(){
+    var m = document.getElementById('hm');
+    if (!m) return;
+    var NS = 'http://www.w3.org/2000/svg', svg = m.querySelector('.hm-wires');
+    var ins = m.querySelectorAll('.hm-in .hm-node'), outs = m.querySelectorAll('.hm-out .hm-node');
+    var engine = m.querySelector('.hm-engine'), cash = m.querySelector('.hm-cash'), cap = document.getElementById('hm-msg');
+    var lines = [
+      'A lead from your <b>lead magnet</b> is tagged in the CRM, then <b>booked on your calendar</b> automatically.',
+      'A <b>Google Business</b> searcher lands in your database and starts getting <b>lifetime nurture</b> emails.',
+      'A <b>social media</b> lead gets fast follow-up and moves to <b>converted</b> in your pipeline.',
+      'Every source and stage rolls up into <b>performance reports</b>, so you know what is working.'
+    ];
+    var wires = { inE: [], eOut: [], outC: [] };
+    function wire(a, b){
+      var mr = m.getBoundingClientRect(), r1 = a.getBoundingClientRect(), r2 = b.getBoundingClientRect(), x1, y1, x2, y2, d;
+      if (r2.left >= r1.right - 4) {
+        x1 = r1.right - mr.left; y1 = r1.top + r1.height / 2 - mr.top; x2 = r2.left - mr.left; y2 = r2.top + r2.height / 2 - mr.top;
+        var cx = (x2 - x1) / 2; d = 'M' + x1 + ' ' + y1 + ' C' + (x1 + cx) + ' ' + y1 + ' ' + (x2 - cx) + ' ' + y2 + ' ' + x2 + ' ' + y2;
+      } else {
+        x1 = r1.left + r1.width / 2 - mr.left; y1 = r1.bottom - mr.top; x2 = r2.left + r2.width / 2 - mr.left; y2 = r2.top - mr.top;
+        var cy = (y2 - y1) / 2; d = 'M' + x1 + ' ' + y1 + ' C' + x1 + ' ' + (y1 + cy) + ' ' + x2 + ' ' + (y2 - cy) + ' ' + x2 + ' ' + y2;
+      }
+      var p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); svg.insertBefore(p, svg.firstChild); return p;
+    }
+    function draw(){
+      Array.prototype.slice.call(svg.querySelectorAll('path')).forEach(function(p){ p.remove(); });
+      wires.inE = Array.prototype.map.call(ins, function(n){ return wire(n, engine); });
+      wires.eOut = Array.prototype.map.call(outs, function(n){ return wire(engine, n); });
+      wires.outC = Array.prototype.map.call(outs, function(n){ return wire(n, cash); });
+    }
+    // wait for the hero rise-in to settle before measuring
+    setTimeout(draw, 1200); draw();
+    window.addEventListener('resize', draw);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ setTimeout(draw, 1200); });
+    function setCap(i){ cap.style.opacity = 0; setTimeout(function(){ cap.innerHTML = lines[i]; cap.style.opacity = 1; }, reduce ? 0 : 200); }
+    if (reduce) { outs.forEach(function(n){ n.classList.add('on'); }); setCap(0); return; }
+    var dot = document.createElementNS(NS, 'circle'); dot.setAttribute('r', '5'); dot.style.opacity = 0; svg.appendChild(dot);
+    function travel(path, ms, done){
+      path.classList.add('flowing');
+      var len = path.getTotalLength(), t0 = null; dot.style.opacity = 1;
+      function frame(t){
+        if (!t0) t0 = t;
+        var k = Math.min((t - t0) / ms, 1), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var pt = path.getPointAtLength(e * len); dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+        if (k < 1) requestAnimationFrame(frame); else { path.classList.remove('flowing'); done(); }
+      }
+      requestAnimationFrame(frame);
+    }
+    var step = 0, running = false, visible = false;
+    function cycle(){
+      if (!visible) { running = false; return; }
+      running = true;
+      var j = step % outs.length, i = step % ins.length;
+      ins.forEach(function(n, k){ n.classList.toggle('on', k === i); });
+      outs.forEach(function(n){ n.classList.remove('on'); });
+      setCap(j);
+      travel(wires.inE[i], 900, function(){
+        engine.classList.add('working');
+        setTimeout(function(){ engine.classList.remove('working'); }, 1100);
+        travel(wires.eOut[j], 900, function(){
+          outs[j].classList.add('on');
+          travel(wires.outC[j], 700, function(){
+            dot.style.opacity = 0;
+            cash.classList.remove('hit'); void cash.offsetWidth; cash.classList.add('hit');
+            step++; setTimeout(cycle, 900);
+          });
+        });
+      });
+    }
+    var kick = function(){ if (visible && !running) cycle(); };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; if (visible) setTimeout(kick, running ? 0 : 1300); }); }, { threshold: 0.25 }).observe(m);
+    } else { visible = true; setTimeout(kick, 1300); }
+  })();
+
+  // Website demo: slideshow of real client sites we built, with a live lead-activity toast
+  (function(){
+  var shots = document.querySelectorAll('.shots img'), chips = document.querySelectorAll('.theme-chips span'), toast = document.querySelector('.toast');
+  if (shots.length) {
+    var acts = ['<b>Kai M.</b> saved a search in <em>Kailua-Kona</em>',
+                '<b>Leah K.</b> watched your <em>market update video</em>',
+                '<b>Dev S.</b> viewed a <em>luxury listing</em> twice today',
+                '<b>Jordan P.</b> viewed a Scottsdale home <em>for the 5th time</em>',
+                '<b>Ana R.</b> asked for a <em>home value report</em>',
+                '<b>Mira T.</b> signed up from <em>Wellington, CO</em>',
+                '<b>Sam L.</b> saved <em>3 homes</em> this week',
+                '<b>Priya N.</b> booked a <em>showing</em>'];
+    var th = 0, timer;
+    var showToast = function(){ toast.innerHTML = '<span class="live-dot"></span><div>' + acts[th] + '</div>'; toast.classList.add('show'); };
+    var go = function(k){
+      toast.classList.remove('show');
+      th = k;
+      shots.forEach(function(im, i){ im.classList.toggle('on', i === th); });
+      chips.forEach(function(c, i){ c.classList.toggle('on', i === th); });
+      setTimeout(showToast, 900);
+    };
+    var loop = function(){ clearInterval(timer); timer = setInterval(function(){ go((th + 1) % shots.length); }, 4500); };
+    chips.forEach(function(c, i){ c.addEventListener('click', function(){ go(i); if (!reduce) loop(); }); });
+    if (reduce) showToast();
+    else { setTimeout(showToast, 1200); loop(); }
+  }
+  })();
+
+  // Count-up numbers in the proof strip
+  var counters = document.querySelectorAll('[data-count]');
+  var runCount = function(el){
+    var end = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', dur = 5000, t0 = null;
+    var step = function(t){
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + Math.round(end * e) + (p < 1 ? '' : suf);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    el.textContent = pre + '0'; requestAnimationFrame(step);
+  };
+  if (!reduce) {
+    if (!('IntersectionObserver' in window)) counters.forEach(runCount);
+    else {
+      var cio = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); } });
+      }, { threshold: 0.4 });
+      counters.forEach(function(el){ cio.observe(el); });
+    }
+  }
+
+  // Build timeline: axis position, then a progress head that walks step to step
+  var tl = document.querySelector('.tl');
+  if (tl) {
+    var steps = tl.querySelectorAll('.ts'), dots = tl.querySelectorAll('.ts-dot'), prog = tl.querySelector('.tl-prog');
+    var place = function(){ var d = dots[0]; tl.style.setProperty('--axis-y', (d.offsetTop + d.offsetHeight / 2) + 'px'); };
+    var go = function(i){
+      steps.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+      prog.classList.toggle('reset', i === 0);
+      prog.style.width = (dots[i].offsetLeft + dots[i].offsetWidth / 2) + 'px';
+    };
+    place(); window.addEventListener('resize', function(){ place(); });
+    var started = false, cur = 0;
+    var start = function(){
+      if (started) return; started = true;
+      if (reduce) { tlBox.classList.add('built'); go(steps.length - 1); return; }
+      setTimeout(function(){ tlBox.classList.add('built'); go(0); setInterval(function(){ cur = (cur + 1) % steps.length; go(cur); }, 1800); }, 2600);
+    };
+    var tlBox = document.querySelector('.timeline');
+    if (!('IntersectionObserver' in window)) start();
+    else new IntersectionObserver(function(es, o){ if (es[0].isIntersecting) { start(); o.disconnect(); } }, { threshold: 0.3 }).observe(tlBox);
+  }
+
+  // Cursor-follow glow (desktop pointers only)
+  var glow = document.getElementById('cursor-glow');
+  if (reduce || !window.matchMedia('(pointer: fine)').matches) { glow.remove(); return; }
+  var raf = null, tx = -500, ty = -500, cx = -500, cy = -500;
+  function tick(){
+    cx += (tx - cx) * 0.15; cy += (ty - cy) * 0.15;
+    glow.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%)';
+    raf = (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) ? requestAnimationFrame(tick) : null;
+  }
+  window.addEventListener('mousemove', function(e){
+    tx = e.clientX; ty = e.clientY;
+    document.body.classList.add('has-glow');
+    if (!raf) raf = requestAnimationFrame(tick);
+  });
+})();
+</script>
 </body>
 </html>
