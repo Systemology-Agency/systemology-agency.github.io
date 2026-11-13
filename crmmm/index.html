@@ -571,10 +571,10 @@ body.has-glow #cursor-glow{opacity:1}
       <div class="hm" id="hm">
         <svg class="hm-wires" aria-hidden="true"></svg>
         <div class="hm-col hm-in">
+          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a7 7 0 0 1 4 6.5"/></svg></div><div><b>Sphere of Influence (SOI)</b><span>Past clients, friends, referrals</span></div></div>
           <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h12l-1 7a5 5 0 0 1-10 0z"/><path d="M12 15v6M8 21h8"/></svg></div><div><b>Lead magnets</b><span>Guides, home values, landing pages</span></div></div>
           <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><b>Google Business</b><span>Searches and reviews</span></div></div>
           <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div><div><b>Social media</b><span>Facebook and Instagram</span></div></div>
-          <div class="hm-node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a7 7 0 0 1 4 6.5"/></svg></div><div><b>Sphere of Influence (SOI)</b><span>Past clients, friends, referrals</span></div></div>
         </div>
         <div class="hm-engine">
           <div class="hm-eng-top"><span class="hm-leds" aria-hidden="true"><i></i><i></i><i></i></span><span>Sales system</span><span class="hm-rpm">ON</span></div>
@@ -1044,10 +1044,10 @@ body.has-glow #cursor-glow{opacity:1}
     var ins = m.querySelectorAll('.hm-in .hm-node'), outs = m.querySelectorAll('.hm-out .hm-node');
     var engine = m.querySelector('.hm-engine'), cash = m.querySelector('.hm-cash'), cap = document.getElementById('hm-msg');
     var lines = [
-      'A lead from your <b>lead magnet</b> is tagged in the CRM, then <b>booked on your calendar</b> automatically.',
-      'A <b>Google Business</b> searcher lands in your database and starts getting <b>lifetime nurture</b> emails.',
-      'A <b>social media</b> lead gets fast follow-up and moves to <b>converted</b> in your pipeline.',
-      'Your <b>sphere of influence</b> is loaded in the CRM, and every source and stage rolls up into <b>performance reports</b>, so you know what is working.'
+      'A past client from your <b>sphere of influence</b> is tagged in the CRM, then <b>booked on your calendar</b> automatically.',
+      'A lead from your <b>lead magnet</b> lands in your database and starts getting <b>lifetime nurture</b> emails.',
+      'A <b>Google Business</b> searcher gets fast follow-up and moves to <b>converted</b> in your pipeline.',
+      'Every <b>social media</b> lead and every other source rolls up into <b>performance reports</b>, so you know what is working.'
     ];
     var wires = { inE: [], eOut: [], outC: [] };
     function wire(a, b){
