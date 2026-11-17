@@ -528,6 +528,17 @@ body.has-glow #cursor-glow{opacity:1}
   .phases{padding:28px 20px}
   .final{padding:56px 22px;border-radius:20px}
 }
+/* trusted-by marquee */
+.trusted{padding:44px 0 52px;text-align:center;border-bottom:1px solid var(--line)}
+.trusted__label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 24px}
+.trusted__viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.trusted__track{display:flex;align-items:center;width:max-content;animation:trusted-scroll 32s linear infinite}
+.trusted__viewport:hover .trusted__track{animation-play-state:paused}
+.trusted__item{flex:none;display:flex;align-items:center;justify-content:center;height:72px;padding:0 36px}
+.trusted__item img{height:var(--h,40px);width:auto;max-width:220px;object-fit:contain;filter:grayscale(1) var(--f,brightness(1));mix-blend-mode:multiply;opacity:.6;transition:opacity .2s}
+.trusted__item img:hover{opacity:.9}
+@keyframes trusted-scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.trusted__track{animation:none}.trusted__viewport{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -607,6 +618,28 @@ body.has-glow #cursor-glow{opacity:1}
   </div>
 </header>
 
+
+<section class="trusted" aria-label="Clients we have worked with">
+  <p class="trusted__label">Trusted by teams at</p>
+  <div class="trusted__viewport">
+    <div class="trusted__track">
+      <div class="trusted__item"><img src="/assets/trusted-by/southern-nm.png" alt="Southern NM Real Estate Group" style="--h:72px"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/cuttone.svg" alt="Cuttone Real Estate Group" style="--h:36px"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/lisa-cheponis.png" alt="Lisa Cheponis, Realtor" style="--h:44px;--f:brightness(.45)"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/miles-away-team.png" alt="Miles Away Team" style="--h:58px"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/rachelle-raven.png" alt="Rachelle Raven" style="--h:46px"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/roland-osage.svg" alt="Roland Osage" style="--h:56px;--f:brightness(.6)"></div>
+      <div class="trusted__item"><img src="/assets/trusted-by/chinea-group.png" alt="The Chinea Group" style="--h:84px;--f:brightness(.55)"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/southern-nm.png" alt="" style="--h:72px"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/cuttone.svg" alt="" style="--h:36px"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/lisa-cheponis.png" alt="" style="--h:44px;--f:brightness(.45)"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/miles-away-team.png" alt="" style="--h:58px"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/rachelle-raven.png" alt="" style="--h:46px"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/roland-osage.svg" alt="" style="--h:56px;--f:brightness(.6)"></div>
+      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/chinea-group.png" alt="" style="--h:84px;--f:brightness(.55)"></div>
+    </div>
+  </div>
+</section>
 
 <section class="section center" id="who">
   <div class="wrap">
