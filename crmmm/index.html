@@ -529,14 +529,15 @@ body.has-glow #cursor-glow{opacity:1}
   .final{padding:56px 22px;border-radius:20px}
 }
 /* trusted-by marquee */
-.trusted{padding:44px 0 52px;text-align:center;border-bottom:1px solid var(--line)}
-.trusted__label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin:0 0 24px}
+.trusted{padding:44px 0 52px;text-align:center;background:#0b0d12}
+.trusted__label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 24px}
 .trusted__viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .trusted__track{display:flex;align-items:center;width:max-content;animation:trusted-scroll 160s linear infinite}
 .trusted__viewport:hover .trusted__track{animation-play-state:paused}
 .trusted__item{flex:none;display:flex;align-items:center;justify-content:center;height:72px;padding:0 36px}
-.trusted__item img{height:var(--h,40px);width:auto;max-width:220px;object-fit:contain;filter:grayscale(1) var(--f,brightness(1));mix-blend-mode:multiply;opacity:.6;transition:opacity .2s}
-.trusted__item img:hover{opacity:.9}
+.trusted__item img{height:var(--h,40px);width:auto;max-width:220px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85;transition:opacity .2s}
+.trusted__item img.trusted__opaque{filter:grayscale(1) invert(1);mix-blend-mode:screen}
+.trusted__item img:hover{opacity:1}
 @keyframes trusted-scroll{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.trusted__track{animation:none}.trusted__viewport{overflow-x:auto}}
 </style>
@@ -632,7 +633,7 @@ body.has-glow #cursor-glow{opacity:1}
       <div class="trusted__item"><img src="/assets/trusted-by/connie-alexander.png" alt="The Luxe Group" style="--h:28px;--f:brightness(0)"></div>
       <div class="trusted__item"><img src="/assets/trusted-by/corey-robinson.png" alt="Journey Real Estate" style="--h:28px;--f:brightness(0)"></div>
       <div class="trusted__item"><img src="/assets/trusted-by/cory-smith.png" alt="Cory Smith Group" style="--h:42px"></div>
-      <div class="trusted__item"><img src="/assets/trusted-by/southern-nm.png" alt="Southern NM Real Estate Group" style="--h:72px"></div>
+      <div class="trusted__item"><img class="trusted__opaque" src="/assets/trusted-by/southern-nm.png" alt="Southern NM Real Estate Group" style="--h:72px"></div>
       <div class="trusted__item"><img src="/assets/trusted-by/dr-amy-king.png" alt="Dr. Amy King" style="--h:62px;--f:brightness(0)"></div>
       <div class="trusted__item"><img src="/assets/trusted-by/duston-vance.png" alt="Mohave Luxury" style="--h:34px"></div>
       <div class="trusted__item"><img src="/assets/trusted-by/elizabeth-mcnally.png" alt="Real Estate Collective" style="--h:28px;--f:brightness(0)"></div>
@@ -669,7 +670,7 @@ body.has-glow #cursor-glow{opacity:1}
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/connie-alexander.png" alt="" style="--h:28px;--f:brightness(0)"></div>
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/corey-robinson.png" alt="" style="--h:28px;--f:brightness(0)"></div>
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/cory-smith.png" alt="" style="--h:42px"></div>
-      <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/southern-nm.png" alt="" style="--h:72px"></div>
+      <div class="trusted__item" aria-hidden="true"><img class="trusted__opaque" src="/assets/trusted-by/southern-nm.png" alt="" style="--h:72px"></div>
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/dr-amy-king.png" alt="" style="--h:62px;--f:brightness(0)"></div>
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/duston-vance.png" alt="" style="--h:34px"></div>
       <div class="trusted__item" aria-hidden="true"><img src="/assets/trusted-by/elizabeth-mcnally.png" alt="" style="--h:28px;--f:brightness(0)"></div>
